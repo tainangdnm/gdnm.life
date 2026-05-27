@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="台南花園夜市是南台灣最具代表性的美食夜市，提供美食區、百貨區與遊戲區，滿足旅客各式需求。">
+  <title>台南花園夜市 | Garden Night Market | Taiwan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0d0d0d;
+      --cream: #f5efe6;
+      --warm-white: #faf7f2;
+      --coral: #c94f3a;
+      --teal: #2a6b7c;
+      --gold: #c8a86b;
+      --dark-teal: #1a4a57;
+      --text-dark: #1a1a1a;
+      --text-muted: #666;
+      --border: rgba(200,168,107,0.3);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: 'Noto Sans TC', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 48px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(13,13,13,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(200,168,107,0.15);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(245,239,230,0.75);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    #home {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 60% 40%, rgba(201,79,58,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 80%, rgba(42,107,124,0.22) 0%, transparent 55%),
+        linear-gradient(180deg, #0d0d0d 0%, #111 50%, #0a0a0a 100%);
+    }
+
+    /* Decorative lights pattern */
+    .hero-lights {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(200,168,107,0.6) 1px, transparent 1px),
+        radial-gradient(circle, rgba(201,79,58,0.4) 1px, transparent 1px);
+      background-size: 80px 80px, 130px 130px;
+      background-position: 0 0, 40px 40px;
+      opacity: 0.15;
+      animation: twinkle 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.10; }
+      100% { opacity: 0.22; }
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      padding: 0 24px;
+    }
+
+    .hero-year {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      opacity: 0.8;
+    }
+
+    .hero-title-zh {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(48px, 8vw, 96px);
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      line-height: 1.1;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .hero-title-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(16px, 2.5vw, 28px);
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      font-style: italic;
+      margin-bottom: 32px;
+    }
+
+    .hero-subtitle {
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      color: rgba(245,239,230,0.5);
+      margin-bottom: 8px;
+    }
+
+    .hero-tagline-jp {
+      font-size: 14px;
+      line-height: 1.9;
+      color: rgba(200,168,107,0.7);
+      margin-bottom: 6px;
+    }
+
+    .hero-tagline-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: rgba(245,239,230,0.6);
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .hero-award {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      padding: 10px 28px;
+      margin-bottom: 48px;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.4;
+      animation: float 2.5s ease-in-out infinite;
+    }
+
+    .hero-scroll span {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero-scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ── SECTION BASE ── */
+    section {
+      padding: 100px 48px;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      opacity: 0.8;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      line-height: 1.3;
+      margin-bottom: 48px;
+    }
+
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 48px;
+      opacity: 0.5;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--black);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-text p {
+      font-size: 15px;
+      line-height: 2;
+      color: rgba(245,239,230,0.75);
+      margin-bottom: 24px;
+    }
+
+    .about-text .text-jp {
+      font-size: 13px;
+      color: rgba(200,168,107,0.6);
+      line-height: 1.9;
+      margin-bottom: 16px;
+      border-left: 2px solid rgba(200,168,107,0.3);
+      padding-left: 16px;
+    }
+
+    .about-text .text-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: rgba(245,239,230,0.5);
+      line-height: 1.8;
+    }
+
+    .hours-box {
+      background: rgba(200,168,107,0.06);
+      border: 1px solid var(--border);
+      padding: 48px;
+    }
+
+    .hours-box h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 32px;
+    }
+
+    .hours-time {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 300;
+      color: var(--cream);
+      letter-spacing: 0.05em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .hours-days {
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      color: rgba(245,239,230,0.5);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .hours-note {
+      font-size: 12px;
+      color: rgba(200,168,107,0.6);
+      line-height: 1.8;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── SECTIONS STRIP ── */
+    #bazaar {
+      background: #0a0f12;
+      border-top: 1px solid rgba(42,107,124,0.2);
+      border-bottom: 1px solid rgba(42,107,124,0.2);
+    }
+
+    .bazaar-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .bazaar-text p {
+      font-size: 14px;
+      line-height: 1.9;
+      color: rgba(245,239,230,0.7);
+      margin-bottom: 20px;
+    }
+
+    .bazaar-text .text-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: rgba(245,239,230,0.45);
+      line-height: 1.8;
+    }
+
+    .zones {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .zone-item {
+      padding: 20px 28px;
+      border-left: 3px solid transparent;
+      transition: all 0.3s;
+      cursor: default;
+    }
+
+    .zone-item:nth-child(1) { border-color: var(--coral); background: rgba(201,79,58,0.05); }
+    .zone-item:nth-child(2) { border-color: var(--teal); background: rgba(42,107,124,0.05); }
+    .zone-item:nth-child(3) { border-color: var(--gold); background: rgba(200,168,107,0.05); }
+    .zone-item:nth-child(4) { border-color: rgba(150,120,200,0.8); background: rgba(150,120,200,0.05); }
+
+    .zone-item:hover { transform: translateX(6px); }
+
+    .zone-name {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+
+    .zone-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(245,239,230,0.35);
+      letter-spacing: 0.1em;
+    }
+
+    /* ── MUSIC ── */
+    #music {
+      background: linear-gradient(180deg, #0a0f12 0%, #0d0d0d 100%);
+    }
+
+    .music-content {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .music-content .section-title {
+      font-size: clamp(24px, 3.5vw, 42px);
+    }
+
+    .music-text p {
+      font-size: 14px;
+      line-height: 2;
+      color: rgba(245,239,230,0.65);
+      margin-bottom: 16px;
+    }
+
+    .music-text .text-jp {
+      font-size: 13px;
+      color: rgba(200,168,107,0.55);
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    .music-text .text-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: rgba(245,239,230,0.4);
+      line-height: 1.8;
+    }
+
+    /* ── NEWS ── */
+    #news {
+      background: #0d0d0d;
+      border-top: 1px solid rgba(200,168,107,0.1);
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .news-card {
+      background: rgba(245,239,230,0.03);
+      padding: 40px 32px;
+      border: 1px solid rgba(200,168,107,0.08);
+      transition: all 0.4s;
+      cursor: default;
+    }
+
+    .news-card:hover {
+      background: rgba(200,168,107,0.06);
+      border-color: rgba(200,168,107,0.2);
+    }
+
+    .news-date {
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      opacity: 0.7;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .news-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--cream);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── DESIGN ── */
+    #design {
+      background: linear-gradient(180deg, #0d0d0d 0%, #080f12 100%);
+    }
+
+    .design-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .design-text p {
+      font-size: 14px;
+      line-height: 2;
+      color: rgba(245,239,230,0.7);
+      margin-bottom: 24px;
+    }
+
+    .design-text .text-jp {
+      font-size: 12.5px;
+      color: rgba(200,168,107,0.55);
+      line-height: 1.9;
+      padding-left: 16px;
+      border-left: 2px solid rgba(200,168,107,0.25);
+      margin-bottom: 20px;
+    }
+
+    .design-text .text-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: rgba(245,239,230,0.4);
+      line-height: 1.8;
+    }
+
+    .flowers-display {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .flower-tile {
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      gap: 10px;
+      border: 1px solid rgba(200,168,107,0.12);
+      transition: all 0.4s;
+      cursor: default;
+    }
+
+    .flower-tile:nth-child(1) { background: rgba(201,79,58,0.08); }
+    .flower-tile:nth-child(2) { background: rgba(42,107,124,0.08); }
+    .flower-tile:nth-child(3) { background: rgba(200,168,107,0.08); }
+    .flower-tile:nth-child(4) { background: rgba(100,60,120,0.08); }
+
+    .flower-tile:hover { transform: scale(1.02); }
+
+    .flower-tile span {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      color: rgba(245,239,230,0.5);
+    }
+
+    /* ── MARKET SECTION ── */
+    #market {
+      background: #080f12;
+      border-top: 1px solid rgba(42,107,124,0.2);
+    }
+
+    .market-highlight {
+      background: rgba(42,107,124,0.08);
+      border: 1px solid rgba(42,107,124,0.25);
+      padding: 48px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .market-highlight h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .market-highlight p {
+      font-size: 14px;
+      line-height: 2;
+      color: rgba(245,239,230,0.65);
+      margin-bottom: 16px;
+    }
+
+    .market-highlight .text-jp {
+      font-size: 12.5px;
+      color: rgba(200,168,107,0.5);
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    .market-highlight .text-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: rgba(245,239,230,0.4);
+      line-height: 1.8;
+    }
+
+    /* ── LOCATION ── */
+    #location {
+      background: var(--black);
+      border-top: 1px solid rgba(200,168,107,0.1);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      opacity: 0.7;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .contact-label {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.7;
+    }
+
+    .contact-value {
+      font-size: 15px;
+      color: rgba(245,239,230,0.8);
+      letter-spacing: 0.05em;
+      line-height: 1.6;
+    }
+
+    .contact-value a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact-value a:hover { color: var(--gold); }
+
+    .contact-value-sub {
+      font-size: 12px;
+      color: rgba(245,239,230,0.4);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      letter-spacing: 0.05em;
+    }
+
+    .map-placeholder {
+      background: rgba(42,107,124,0.06);
+      border: 1px solid rgba(42,107,124,0.2);
+      height: 340px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+
+    .map-placeholder:hover {
+      background: rgba(42,107,124,0.12);
+      border-color: rgba(42,107,124,0.4);
+    }
+
+    .map-pin { font-size: 36px; opacity: 0.5; }
+
+    .map-placeholder span {
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(245,239,230,0.4);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #050505;
+      border-top: 1px solid rgba(200,168,107,0.12);
+      padding: 48px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .footer-tagline {
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      color: rgba(245,239,230,0.3);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 32px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(245,239,230,0.35);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(245,239,230,0.2);
+      letter-spacing: 0.15em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      section { padding: 72px 24px; }
+
+      .about-grid,
+      .bazaar-grid,
+      .design-grid,
+      .location-grid { grid-template-columns: 1fr; gap: 48px; }
+
+      .news-grid { grid-template-columns: 1fr; }
+      .flowers-display { grid-template-columns: 1fr 1fr; }
+
+      .hours-time { font-size: 40px; }
+      footer { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#home" class="nav-logo">Garden Night Market</a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#news">Latest News</a></li>
+      <li><a href="#market">Market Section</a></li>
+      <li><a href="#design">About Design</a></li>
+      <li><a href="#location">Location</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-lights"></div>
+    <div class="hero-content">
+      <p class="hero-year">Tainan International Night Market &nbsp;|&nbsp; Est. 1999</p>
+      <h1 class="hero-title-zh">花園夜市</h1>
+      <p class="hero-title-en">Foods, Shopping, Fun.</p>
+      <p class="hero-tagline-jp">にぎやかな屋台、香ばしい匂い、<br>食べて、歩いて、また食べたくなる夜。</p>
+      <p class="hero-tagline-en">Lively stalls, mouthwatering aromas,<br>a night where you eat, stroll, and want to eat again.</p>
+      <p class="hero-award">✦ 2025 南台灣唯一「五星夜市」殊榮 ✦</p>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-left">
+          <p class="section-label">About</p>
+          <h2 class="section-title">南台灣最具代表性<br>的美食夜市</h2>
+          <div class="divider"></div>
+          <div class="about-text">
+            <p>花園夜市挾著面積充足以提供免費停車場，並分三種區域「美食區、百貨區與遊戲區」，滿足旅客各式需求外。近年特增設演藝區，著重提升氛圍，讓旅客享有多元的觀光體驗。</p>
+            <p>2013年，花園夜市更躋身「全球熱門打卡地點」榜單第12名，成為國內外旅人爭相造訪的景點之一。經過多年發展，花園夜市更榮獲「南台灣第一家五星夜市」殊榮，展現其對環境衛生、服務品質與商家多元性的持續提升。</p>
+            <p class="text-en">Garden Night Market has earned its reputation as one of Southern Taiwan's most iconic night markets — ranked 12th among the world's most popular check-in locations in 2013.</p>
+          </div>
+        </div>
+        <div class="about-right">
+          <div class="hours-box">
+            <h3>Opening Hours</h3>
+            <div class="hours-time">17:00</div>
+            <div class="hours-time" style="font-size:32px; color: var(--gold); margin-bottom:12px;">— 00:00</div>
+            <div class="hours-days">Thursday — Sunday</div>
+            <p class="hours-note">營業時間 / 週四至週日 17:00～00:00<br><br>特殊節日營業時間另行公告</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAZAAR ZONES -->
+  <section id="bazaar">
+    <div class="section-inner">
+      <div class="bazaar-grid">
+        <div class="bazaar-text">
+          <p class="section-label">Our Night Bazaar</p>
+          <h2 class="section-title">三大區域<br>滿足你的每種需求</h2>
+          <div class="divider"></div>
+          <p>花園夜市は、広い敷地を活かした無料駐車場を備え、「グルメエリア」「ショッピングエリア」「ゲームエリア」の3つのゾーンで構成されています。</p>
+          <p>さまざまな旅行者のニーズに応えるだけでなく、近年はステージパフォーマンスエリアも新設され、より一層雰囲気を高め、多彩な観光体験を提供しています。</p>
+          <p class="text-en">Garden Night Market features a spacious layout with free parking, and is divided into three main zones — meeting a wide range of visitor needs with a newly added Performance Area.</p>
+        </div>
+        <div class="zones">
+          <div class="zone-item">
+            <div class="zone-name">美食區</div>
+            <div class="zone-en">Food Section</div>
+          </div>
+          <div class="zone-item">
+            <div class="zone-name">百貨區</div>
+            <div class="zone-en">Goods Section</div>
+          </div>
+          <div class="zone-item">
+            <div class="zone-name">遊戲區</div>
+            <div class="zone-en">Entertainment Section</div>
+          </div>
+          <div class="zone-item">
+            <div class="zone-name">演藝區</div>
+            <div class="zone-en">Performance Area</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MUSIC -->
+  <section id="music">
+    <div class="section-inner">
+      <div class="music-content">
+        <p class="section-label">Experience</p>
+        <h2 class="section-title">Where Food Meets Music<br>Chill Together in Tainan</h2>
+        <div class="divider" style="margin: 0 auto 48px;"></div>
+        <div class="music-text">
+          <p>現場演出與環境的音樂氛圍，讓夜市成為在地美食、音樂與人群匯聚的熱鬧所在。不只是聽音樂，而是在節奏中品嚐一口口的小吃，讓你每次走訪，都能享受台南超Chill的夜晚。</p>
+          <p class="text-jp">音楽とパフォーマンスが夜市を包み込み、食と音が人をつなぐ、にぎやかな空間を生み出します。リズムとともに味わう一口一口が、心に残る楽しい夜になります。</p>
+          <p class="text-en">Music and performances fill the night market, bringing people together through food and sound — while every bite savored with the rhythm, turns each visit into a memorable and joyful night.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section id="news">
+    <div class="section-inner">
+      <p class="section-label">Latest News</p>
+      <h2 class="section-title">最新活動資訊</h2>
+      <div class="divider"></div>
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="news-date">2025年12月24日</div>
+          <h3 class="news-title">狂賀！🏆花園夜市蟬聯五星夜市殊榮🌟 感恩大回饋，週五持續加碼「200換300」！</h3>
+        </article>
+        <article class="news-card">
+          <div class="news-date">2025年10月</div>
+          <h3 class="news-title">五！五！五！五！花！園！夜！市！】五甜不歡！五味俱全！五限享樂！五敵好食！台南花園夜市，十月開始，周五加開🔥</h3>
+        </article>
+        <article class="news-card">
+          <div class="news-date">最新消息</div>
+          <h3 class="news-title">狂賀！【花園夜市】榮獲「五星夜市」最高榮耀！🌟 台南400菜市場金馬獎大豐收！</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIGN -->
+  <section id="design">
+    <div class="section-inner">
+      <div class="design-grid">
+        <div class="design-text">
+          <p class="section-label">About Design</p>
+          <h2 class="section-title">花會 · 花卉<br>Design In The Market</h2>
+          <div class="divider"></div>
+          <p>位於台南古都的花園夜市，本次以「花會‧花卉」為名，其意為夜裡的花園夜市，各種攤販的燈點彷彿朵朵小花齊放，同時傳遞「因為你我，所以我們聚會在這裡」的意涵，一同成為閃亮星夜的花卉。</p>
+          <p>本次設計以台南具代表性的鳳凰花、梅花、蘭花、木棉花以及古早的花玻璃，取鮮明與復古色系作為新舊相赴的意象，並採台日系混合風格妝點些微趣味的調性，增添親和力，讓整體夜市展現新靈魂。</p>
+          <p class="text-jp">台南の古都に位置する花園夜市は、今回「花會・花卉」をテーマに開催されます。様々な屋台の灯りがまるで小さな花々のように咲き誇ります。</p>
+          <p class="text-en">Located in the historic city of Tainan, Garden Night Market adopts the theme "Flower Gathering" — drawing inspiration from Tainan's iconic flowers, combining vivid and retro palettes with a Taiwanese-Japanese aesthetic.</p>
+        </div>
+        <div class="flowers-display">
+          <div class="flower-tile">🌺<span>鳳凰花</span></div>
+          <div class="flower-tile">🌸<span>梅花</span></div>
+          <div class="flower-tile">🌼<span>蘭花</span></div>
+          <div class="flower-tile">🌷<span>木棉花</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKET SECTION -->
+  <section id="market">
+    <div class="section-inner">
+      <p class="section-label">Market Section</p>
+      <h2 class="section-title" style="text-align:center;">2025 新設美食特區</h2>
+      <div class="divider" style="margin: 0 auto 48px;"></div>
+      <div class="market-highlight">
+        <h3>「喝呷一條街」</h3>
+        <p>「喝呷一條街」2025年度新設美食特區，讓美食更緊鄰購物，讓你來的時候吃喝購物更便利。</p>
+        <p class="text-jp">2025年度には、新たにフード特区「喝呷一條街」を設置し、グルメとショッピングがより身近に楽しめるようになりました。</p>
+        <p class="text-en">In 2025, a new Food Section "He Cha Yi Tiao Street" was added, bringing delicious food closer to shopping. Now, visitors can enjoy eating, drinking, and shopping more conveniently than ever.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section id="location">
+    <div class="section-inner">
+      <div class="location-grid">
+        <div>
+          <p class="section-label">Find Us</p>
+          <h2 class="section-title">Location &<br>Contact</h2>
+          <div class="divider"></div>
+          <ul class="contact-list">
+            <li class="contact-item">
+              <span class="contact-icon">📍</span>
+              <div class="contact-info">
+                <span class="contact-label">Address</span>
+                <span class="contact-value">704臺南市北區海安路三段533號</span>
+                <span class="contact-value-sub">No. 533, Sec. 3, Hai'an Rd., North Dist., Tainan City 704026, Taiwan</span>
+              </div>
+            </li>
+            <li class="contact-item">
+              <span class="contact-icon">📞</span>
+              <div class="contact-info">
+                <span class="contact-label">Phone</span>
+                <span class="contact-value"><a href="tel:+886-6-358-2881">+886-6-358-2881</a></span>
+              </div>
+            </li>
+            <li class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <div class="contact-info">
+                <span class="contact-label">Email</span>
+                <span class="contact-value"><a href="mailto:info@gdnm.life">info@gdnm.life</a></span>
+              </div>
+            </li>
+            <li class="contact-item">
+              <span class="contact-icon">🕔</span>
+              <div class="contact-info">
+                <span class="contact-label">Hours</span>
+                <span class="contact-value">Thu – Sun &nbsp;|&nbsp; 17:00 – 00:00</span>
+                <span class="contact-value-sub">週四至週日 17:00～00:00</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a class="map-placeholder" href="https://maps.google.com/?q=台南市北區海安路三段533號" target="_blank" rel="noopener">
+          <div class="map-pin">🗺️</div>
+          <span>Open in Google Maps</span>
+          <span style="font-size:11px; opacity:0.5;">台南市北區海安路三段533號</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Garden Night Market</div>
+    <p class="footer-tagline">台南花園夜市 &nbsp;·&nbsp; Est. 1999 &nbsp;·&nbsp; Tainan, Taiwan</p>
+    <ul class="footer-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#market">Market</a></li>
+      <li><a href="#design">Design</a></li>
+      <li><a href="#location">Location</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Garden Night Market · gdnm.life</p>
+  </footer>
+
+</body>
+</html>
