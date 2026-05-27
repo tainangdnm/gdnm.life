@@ -50,12 +50,16 @@
     }
 
     .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      color: var(--gold);
+      display: flex;
+      align-items: center;
       text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 42px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.92;
     }
 
     .nav-links {
@@ -117,6 +121,17 @@
       position: relative;
       text-align: center;
       padding: 0 24px;
+    }
+
+    .hero-logo-wrap {
+      margin-bottom: 32px;
+    }
+
+    .hero-logo {
+      width: 220px;
+      height: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.95;
     }
 
     .hero-year {
@@ -393,39 +408,85 @@
 
     /* ── MUSIC ── */
     #music {
-      background: linear-gradient(180deg, #0a0f12 0%, #0d0d0d 100%);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
     }
 
-    .music-content {
+    .music-image-wrap {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      min-height: 500px;
+    }
+
+    .music-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .music-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(13,13,13,0.25) 0%,
+        rgba(13,13,13,0.1) 40%,
+        rgba(13,13,13,0.65) 75%,
+        rgba(13,13,13,0.95) 100%
+      );
+    }
+
+    .music-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 60px 48px;
       text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
     }
 
-    .music-content .section-title {
-      font-size: clamp(24px, 3.5vw, 42px);
+    .music-caption .section-label {
+      margin-bottom: 12px;
+    }
+
+    .music-caption .section-title {
+      font-size: clamp(22px, 3.5vw, 40px);
+      margin-bottom: 24px;
     }
 
     .music-text p {
       font-size: 14px;
       line-height: 2;
-      color: rgba(245,239,230,0.65);
-      margin-bottom: 16px;
+      color: rgba(245,239,230,0.75);
+      margin-bottom: 12px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .music-text .text-jp {
       font-size: 13px;
-      color: rgba(200,168,107,0.55);
+      color: rgba(200,168,107,0.65);
       line-height: 1.9;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .music-text .text-en {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 16px;
+      font-size: 17px;
       font-style: italic;
-      color: rgba(245,239,230,0.4);
+      color: rgba(245,239,230,0.5);
       line-height: 1.8;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* ── NEWS ── */
@@ -750,6 +811,10 @@
 
       .hours-time { font-size: 40px; }
       footer { padding: 40px 24px; }
+
+      .hero-logo { width: 160px; }
+      .music-caption { padding: 40px 24px; }
+      .music-image-wrap { height: 80vh; }
     }
   </style>
 </head>
@@ -757,7 +822,9 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#home" class="nav-logo">Garden Night Market</a>
+    <a href="#home" class="nav-logo">
+      <img src="logo.png" alt="花園夜市 Garden Night Market">
+    </a>
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#news">Latest News</a></li>
@@ -772,8 +839,10 @@
     <div class="hero-bg"></div>
     <div class="hero-lights"></div>
     <div class="hero-content">
+      <div class="hero-logo-wrap">
+        <img src="logo.png" alt="花園夜市 Garden Night Market" class="hero-logo">
+      </div>
       <p class="hero-year">Tainan International Night Market &nbsp;|&nbsp; Est. 1999</p>
-      <h1 class="hero-title-zh">花園夜市</h1>
       <p class="hero-title-en">Foods, Shopping, Fun.</p>
       <p class="hero-tagline-jp">にぎやかな屋台、香ばしい匂い、<br>食べて、歩いて、また食べたくなる夜。</p>
       <p class="hero-tagline-en">Lively stalls, mouthwatering aromas,<br>a night where you eat, stroll, and want to eat again.</p>
@@ -794,7 +863,7 @@
           <h2 class="section-title">南台灣最具代表性<br>的美食夜市</h2>
           <div class="divider"></div>
           <div class="about-text">
-            <p>花園夜市挾著面積充足以提供免費停車場，並分三種區域「美食區、百貨區與遊戲區」，滿足旅客各式需求外。近年特增設演藝區，著重提升氛圍，讓旅客享有多元的觀光體驗。</p>
+            <p>花園夜市挾著面積充足以提供免費停車場，並分三種區域「美食區、百貨區與遊戲區」，滿足旅客各式各樣的需求，讓每一位旅客都能盡興而歸。</p>
             <p>2013年，花園夜市更躋身「全球熱門打卡地點」榜單第12名，成為國內外旅人爭相造訪的景點之一。經過多年發展，花園夜市更榮獲「南台灣第一家五星夜市」殊榮，展現其對環境衛生、服務品質與商家多元性的持續提升。</p>
             <p class="text-en">Garden Night Market has earned its reputation as one of Southern Taiwan's most iconic night markets — ranked 12th among the world's most popular check-in locations in 2013.</p>
           </div>
@@ -821,8 +890,8 @@
           <h2 class="section-title">三大區域<br>滿足你的每種需求</h2>
           <div class="divider"></div>
           <p>花園夜市は、広い敷地を活かした無料駐車場を備え、「グルメエリア」「ショッピングエリア」「ゲームエリア」の3つのゾーンで構成されています。</p>
-          <p>さまざまな旅行者のニーズに応えるだけでなく、近年はステージパフォーマンスエリアも新設され、より一層雰囲気を高め、多彩な観光体験を提供しています。</p>
-          <p class="text-en">Garden Night Market features a spacious layout with free parking, and is divided into three main zones — meeting a wide range of visitor needs with a newly added Performance Area.</p>
+          <p>さまざまな旅行者のニーズに応えるだけでなく、訪れるたびに新しい発見がある、活気あふれる夜の空間を提供しています。</p>
+          <p class="text-en">Garden Night Market features a spacious layout with free parking, and is divided into three main zones — catering to a wide range of visitor needs.</p>
         </div>
         <div class="zones">
           <div class="zone-item">
@@ -837,10 +906,6 @@
             <div class="zone-name">遊戲區</div>
             <div class="zone-en">Entertainment Section</div>
           </div>
-          <div class="zone-item">
-            <div class="zone-name">演藝區</div>
-            <div class="zone-en">Performance Area</div>
-          </div>
         </div>
       </div>
     </div>
@@ -848,14 +913,14 @@
 
   <!-- MUSIC -->
   <section id="music">
-    <div class="section-inner">
-      <div class="music-content">
+    <div class="music-image-wrap">
+      <img src="experience.avif" alt="花園夜市現場演出氛圍">
+      <div class="music-image-overlay"></div>
+      <div class="music-caption">
         <p class="section-label">Experience</p>
         <h2 class="section-title">Where Food Meets Music<br>Chill Together in Tainan</h2>
-        <div class="divider" style="margin: 0 auto 48px;"></div>
         <div class="music-text">
           <p>現場演出與環境的音樂氛圍，讓夜市成為在地美食、音樂與人群匯聚的熱鬧所在。不只是聽音樂，而是在節奏中品嚐一口口的小吃，讓你每次走訪，都能享受台南超Chill的夜晚。</p>
-          <p class="text-jp">音楽とパフォーマンスが夜市を包み込み、食と音が人をつなぐ、にぎやかな空間を生み出します。リズムとともに味わう一口一口が、心に残る楽しい夜になります。</p>
           <p class="text-en">Music and performances fill the night market, bringing people together through food and sound — while every bite savored with the rhythm, turns each visit into a memorable and joyful night.</p>
         </div>
       </div>
